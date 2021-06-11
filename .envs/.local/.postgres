@@ -1,0 +1,7 @@
+# PostgreSQL
+
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=spbuckets
+POSTGRES_USER=some_postgres_user
+POSTGRES_PASSWORD=some_password

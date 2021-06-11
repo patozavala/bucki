@@ -3,9 +3,12 @@ pip
 pytz==2021.1
 python-slugify==5.0.2
 Pillow==8.2.0
+setuptools==57.0.0
+wheel==0.36.2
+
 
 # Django 
-django>=3.1
+django>=3.1,<4.0
 
 # Environment
 django-environ==0.4.5
@@ -15,7 +18,7 @@ djangorestframework==3.12.4
 django-filter==2.4.0
 
 # PostgreSQL
-psycopg2==2.8.6
+psycopg2==2.8.6 
 
 # Passwords security
 argon2-cffi==20.1.0
