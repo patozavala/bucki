@@ -144,7 +144,8 @@ cython_debug/
 .ipython/
 .idea/
 
-#SpectralBuckets
+#Bucki
+bucki/users/pictures/
 
 # Linux trash folder which might appear on any partition or disk
 .Trash-*

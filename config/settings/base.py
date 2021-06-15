@@ -41,7 +41,13 @@ ROOT_URLCONF = 'config.urls'
 # WSGI
 WSGI_APPLICATION = 'config.wsgi.application'
 
-# Application definition
+# Users
+# https://docs.djangoproject.com/en/3.2/topics/auth/customizing/#auth-custom-user
+AUTH_USER_MODEL = 'users.User'
+
+
+# Applications configuration
+# https://docs.djangoproject.com/en/3.2/ref/applications/
 DJANGO_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,7 +57,9 @@ DJANGO_APPS = [
     'django.contrib.admin',
 ]
 THIRD_PARTY_APPS = []
-LOCAL_APPS = []
+LOCAL_APPS = [
+    'bucki.users.apps.UsersAppConfig',
+]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
