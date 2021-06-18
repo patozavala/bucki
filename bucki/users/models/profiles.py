@@ -25,16 +25,18 @@ class Profile(BuckiModel):
         blank=True,
         null=True
     )
+
+    biography = models.TextField(max_length=255, blank=True)
     
     # Statistics
-    buckis_owned = models.IntegerField(
+    buckies_owned = models.IntegerField(
         default = 0,
-        help_text='Buckis owned by the user.'
+        help_text='Buckets owned by the user.'
         )
 
-    buckis_participating = models.IntegerField(
+    buckets_participating = models.IntegerField(
         default = 0,
-        help_text='Buckis in which the user participates.'
+        help_text='Buckets in which the user participates.'
         )
 
     def __str__(self):

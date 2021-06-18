@@ -22,11 +22,11 @@ class BuckiUserAdmin(UserAdmin):
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
     """
-    Profile admin
+    Profile admin.
     """
-    list_display = ('user', 'buckis_owned', 'buckis_participating')
+    list_display = ('user', 'buckets_owned', 'buckets_participating')
     search_fields = ('user__username', 'user__email', 'user__is_verified', 'user__date_joined')
-    list_filter = ('buckis_owned', 'user__date_joined')
+    list_filter = ('buckets_owned', 'user__date_joined')
     
 # Model is registered into Django's admin interface.
 admin.site.register(User, BuckiUserAdmin)

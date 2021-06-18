@@ -1,5 +1,5 @@
 """
-Users app.
+Buckets app.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/3.2/ref/applications/
@@ -9,10 +9,10 @@ https://docs.djangoproject.com/en/3.2/ref/applications/
 from django.apps import AppConfig
 
 
-class UsersAppConfig(AppConfig):
+class BucketsAppConfig(AppConfig):
     """
-    UsersAppConfig.
+    BucketsAppConfig.
     """
 
-    name = 'bucki.users'
-    verbose_name = 'Users'
+    name = 'bucki.buckets'
+    verbose_name = 'Buckets'

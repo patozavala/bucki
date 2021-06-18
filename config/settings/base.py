@@ -59,6 +59,7 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = []
 LOCAL_APPS = [
     'bucki.users.apps.UsersAppConfig',
+    'bucki.buckets.apps.BucketsAppConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
