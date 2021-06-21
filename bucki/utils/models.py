@@ -26,7 +26,7 @@ class BuckiModel(models.Model):
     )
 
     class Meta:
-        """Meta option."""
+        """Meta options."""
 
         abstract = True
         get_latest_by = 'created'

@@ -12,13 +12,14 @@ class Profile(BuckiModel):
     """
     Profile model.
 
-    A Profile holds the user's public data such as picture, and statistics.
+    A Profile holds the user's public data such as picture, biography and statistics.
     """
 
     user = models.OneToOneField(
         'users.User',
         on_delete = models.CASCADE
     )
+    
     picture = models.ImageField(
         'profile picture',
         upload_to='users/pictures/',
@@ -29,7 +30,7 @@ class Profile(BuckiModel):
     biography = models.TextField(max_length=255, blank=True)
     
     # Statistics
-    buckies_owned = models.IntegerField(
+    buckets_owned = models.IntegerField(
         default = 0,
         help_text='Buckets owned by the user.'
         )

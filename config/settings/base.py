@@ -56,10 +56,12 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.admin',
 ]
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = [
+    'taggit',
+]
 LOCAL_APPS = [
     'bucki.users.apps.UsersAppConfig',
-    'bucki.buckets.apps.BucketsAppConfig',
+    # 'bucki.multispectral.apps.MultiSpectralAppConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -157,7 +159,6 @@ TEMPLATES = [
     },
 ]
 
-
 # Security
 SESSION_COOKIE_HTTPONLY = True
 CSRF_COOKIE_HTTPONLY = True
@@ -174,6 +175,10 @@ ADMINS = [
     ("""Patricio Zavala""", 'pazavala@uc.cl'),
 ]
 MANAGERS = ADMINS
+
+# Model tags
+# https://django-taggit.readthedocs.io/en/latest/
+TAGGIT_CASE_INSENSITIVE = True
 
 # Django REST Framework
 # https://www.django-rest-framework.org/

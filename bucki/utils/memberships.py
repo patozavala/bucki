@@ -18,6 +18,14 @@ class Membership(BuckiModel):
 
     A membership is the table that holds the relationship between
     a user and a bucket.
+
+    Acts as an abstract base class from which every specialized membership inherits.
+
+    Each specialized membership can define:
+
+    the bucket which has the membership (field)
+
+    the str representation.
     """
     user = models.ForeignKey('users.User', on_delete=CASCADE)
     profile = models.ForeignKey('users.Profile', on_delete=CASCADE)
@@ -44,13 +52,6 @@ class Membership(BuckiModel):
         default=True,
         help_text='Only active users are allowed to interact in the bucket.'
     )
-
-    # def __str__(self):
-    #     """Return username and bucket."""
-    #     return '@{} at #{}'.format(
-    #         self.user.username,
-    #         self.bucket.slug_name
-    #     )
 
     class Meta:
         abstract = True
