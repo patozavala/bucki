@@ -18,11 +18,11 @@ class MSBucket(Bucket):
     Multispectral data is assumed disgregated in several files representing channels input by the client. 'MSData' class stores the data into a single structured file in the database join with enriched metadata. 'MSData' has a ManyToOne relationship with MSBucket.
     """
 
-    members = models.ManyToManyField(
-        'users.User',
-        through='multispectral.Membership',
-        through_fields=('bucket', 'user')
-    )
+    # members = models.ManyToManyField(
+    #     'users.User',
+    #     through='multispectral.Membership',
+    #     through_fields=('bucket', 'user')
+    # )
 
     is_limited = models.BooleanField(
         'Is limited',
@@ -36,9 +36,14 @@ class MSBucket(Bucket):
         help_text='If a bucket is limited, this will be the limit on the number of members.'
     )
 
+    # Statistics
+    files_contained = models.PositiveIntegerField(default=0)
+
     def __str__(self):
         """Return the name of the bucket."""
         return self.name
 
+    class Meta(Bucket.Meta):
+        """Meta class."""
 
-
+        ordering = ['-files_contained']

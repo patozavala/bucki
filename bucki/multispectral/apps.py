@@ -8,9 +8,9 @@ https://docs.djangoproject.com/en/3.2/ref/applications/
 # Django
 from django.apps import AppConfig
 
-class MutiSpectralAppConfig(AppConfig):
+class MultiSpectralAppConfig(AppConfig):
     """
-    MutiSpectralAppConfig.
+    MultiSpectralAppConfig.
     """
 
     name = 'bucki.multispectral'

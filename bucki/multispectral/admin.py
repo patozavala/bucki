@@ -28,4 +28,4 @@ class MSBucketAdmin(admin.ModelAdmin):
         'name',
         'slug_name',
     )
-    list_filter = ('is_public')
+    list_filter = ('is_public',)

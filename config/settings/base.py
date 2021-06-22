@@ -61,7 +61,7 @@ THIRD_PARTY_APPS = [
 ]
 LOCAL_APPS = [
     'bucki.users.apps.UsersAppConfig',
-    # 'bucki.multispectral.apps.MultiSpectralAppConfig',
+    'bucki.multispectral.apps.MultiSpectralAppConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

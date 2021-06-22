@@ -16,12 +16,14 @@ from taggit.managers import TaggableManager
 class Bucket(BuckiModel):
     """
     Bucket model.
+
     BucketModel extends from BuckiModel and acts as the abstract base class from which every specialized bucket must inherit.
 
     Each custom bucket must be implemented into a separate app and designed to hold specific data types in an ordered and structured way. 
     The fields of the specialized bucket model are stored in an independent table in the database. 
 
     Implementation of custom buckets
+
     Every custom bucket model must incorporate at least the following fields to ensure the integrity and scalability of the database.
         
     'members': Refers to the users who can participate in the bucket. It is recommended to represent as a ManyToManyField through Invitations.
@@ -34,7 +36,6 @@ class Bucket(BuckiModel):
     Additionally, a class that holds the specific data must be created. This class must inherit from BuckiModel and should have at least a field that collects the data.
 
     '<your_custom_bucket_data>': Represent the data that is stored in the bucket. This field must hold the data in the most ordered and structured way and be related to the bucket through a ForeignKey field.
-
 
     Example: 
     
