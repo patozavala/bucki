@@ -1,5 +1,5 @@
 """
-Multispectral admin.
+Bucket admin.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/3.2/ref/contrib/admin/
@@ -9,12 +9,12 @@ https://docs.djangoproject.com/en/3.2/ref/contrib/admin/
 from django.contrib import admin
 
 # Models
-from bucki.multispectral.models import MSImage
+from bucki.buckets.models import Bucket
 
-@admin.register(MSImage)
-class MSImageAdmin(admin.ModelAdmin):
+@admin.register(Bucket)
+class BucketAdmin(admin.ModelAdmin):
     """
-    Representation of the MSImage model in the Django's admin interface.
+    Representation of the Bucket model in the Django's admin interface.
     """
     
     list_display= (

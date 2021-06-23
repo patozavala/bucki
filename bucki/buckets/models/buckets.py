@@ -1,5 +1,5 @@
 """
-MSBucket model.
+Bucket model.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/3.2/topics/db/models/
@@ -8,15 +8,32 @@ https://docs.djangoproject.com/en/3.2/topics/db/models/
 # Django
 from django.db import models
 
-# Bucki
-from bucki.utils.buckets import Bucket
+# Utilities
+from bucki.utils.models import BuckiModel
+from taggit.managers import TaggableManager
 
-class MSBucket(Bucket):
-    """
-    MSBucket is specially designed to hold multispectral data.
 
-    Multispectral data is assumed disgregated in several files representing channels input by the client. 'MSData' class stores the data into a single structured file in the database join with enriched metadata. 'MSData' has a ManyToOne relationship with MSBucket.
+class Bucket(BuckiModel):
     """
+    Bucket model.
+
+    BucketModel extends from BuckiModel. Buckets are designed for holding specific data files in an ordered and structured way. 
+    
+    The specialized files are stored in an independent table in the database.
+    """
+
+    name = models.CharField('Bucket name', max_length=140)
+    
+    slug_name = models.SlugField(unique=True, max_length=40)
+    
+    description = models.CharField('Bucket description', max_length=255)
+    
+    tags = TaggableManager()
+    
+    is_public = models.BooleanField(
+        default=True,
+        help_text='Public buckets are listed in the main page so everyone know about their existence.'
+    )
 
     # members = models.ManyToManyField(
     #     'users.User',
@@ -43,7 +60,6 @@ class MSBucket(Bucket):
         """Return the name of the bucket."""
         return self.name
 
-    class Meta(Bucket.Meta):
+    class Meta(BuckiModel.Meta):
         """Meta class."""
-
         ordering = ['-files_contained']
