@@ -33,15 +33,13 @@ class Profile(BuckiModel):
     buckets_owned = models.IntegerField(
         default = 0,
         help_text='Buckets owned by the user.'
-        )
+    )
 
     buckets_participating = models.IntegerField(
         default = 0,
         help_text='Buckets in which the user participates.'
-        )
+    )
 
     def __str__(self):
         """Return user's string representation."""
-        return self.username
-
-    
+        return self.username    

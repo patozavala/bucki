@@ -20,6 +20,9 @@ django-taggit
 djangorestframework==3.12.4
 django-filter==2.4.0
 
+# PyJWT
+pyjwt==2.1.0
+
 # PostgreSQL
 psycopg2==2.8.6 
 

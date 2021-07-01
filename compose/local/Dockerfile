@@ -8,6 +8,7 @@ ENV PYTHONUNBUFFERED 1
 ENV TZ=America/Santiago
 
 # Requirements are installed here to ensure they will be cached.
+RUN pip install --upgrade pip
 COPY ["./requirements", "/requirements"]
 RUN pip install -r /requirements/local.txt
 
