@@ -35,11 +35,11 @@ class Bucket(BuckiModel):
         help_text='Public buckets are listed in the main page so everyone know about their existence.'
     )
 
-    # members = models.ManyToManyField(
-    #     'users.User',
-    #     through='multispectral.Membership',
-    #     through_fields=('bucket', 'user')
-    # )
+    members = models.ManyToManyField(
+        'users.User',
+        through='buckets.Membership',
+        through_fields=('bucket', 'user')
+    )
 
     is_limited = models.BooleanField(
         'Is limited',
@@ -54,7 +54,7 @@ class Bucket(BuckiModel):
     )
 
     # Statistics
-    files_contained = models.PositiveIntegerField(default=0)
+    bucket_size = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         """Return the name of the bucket."""
@@ -62,4 +62,4 @@ class Bucket(BuckiModel):
 
     class Meta(BuckiModel.Meta):
         """Meta class."""
-        ordering = ['-files_contained']
+        ordering = ['-bucket_size']
