@@ -21,6 +21,7 @@ class BucketModelSerializer(serializers.ModelSerializer):
         max_value=64
     )
     is_limited = serializers.BooleanField(default=False)
+    is_public = serializers.BooleanField(default=True)
 
     class Meta:
         """Meta class."""

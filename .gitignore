@@ -145,7 +145,7 @@ cython_debug/
 .idea/
 
 #Bucki
-bucki/users/pictures/
+bucki/media/users/pictures/
 
 # Linux trash folder which might appear on any partition or disk
 .Trash-*

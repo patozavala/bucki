@@ -5,6 +5,10 @@ For more information on this file, see
 https://www.django-rest-framework.org/api-guide/serializers/
 """
 
+# Utilities
+from datetime import timedelta
+import jwt
+
 # Django
 from django.utils import timezone
 from django.conf import settings
@@ -25,9 +29,7 @@ from bucki.users.models import User, Profile
 # Serializers
 from bucki.users.serializers.profiles import ProfileModelSerializer
 
-# Utilities
-import jwt
-from datetime import timedelta
+
 
 class UserModelSerializer(serializers.ModelSerializer):
     """User model serializer."""
